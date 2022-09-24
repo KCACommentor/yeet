@@ -1,0 +1,13 @@
+<p>Programming book list!</p>
+<button (click)="toggleBooks()" >{{isShowing ? 'Close' : 'Show books'}}</button>
+<p></p>
+<ul *ngIf="isShowing">
+    <ng-container *ngFor="let book of books; let i = index" >
+    <li >  {{i}}   <img [src]="book.image" alt=""> {{book.name | titlecase}} {{book.author| titlecase}} 
+    <p>{{book.amount | currency}}</p>
+    </li>
+</ng-container>
+</ul>
+
+
+
